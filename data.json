@@ -19,8 +19,8 @@
                 "status": "production",
                 "impact": "採用工数70%削減",
                 "links": {
-                  "demo": "https://docs.google.com/spreadsheets/d/1HYHC-8Ue__67IEYwtm7nHUbWCEG4q5KAGkDVZxp3LzY/edit?usp=sharing",
-                  "document": "#"
+                  "demo": "https://youtu.be/demo1",
+                  "tool": "https://docs.google.com/spreadsheets/d/1HYHC-8Ue__67IEYwtm7nHUbWCEG4q5KAGkDVZxp3LzY/edit?usp=sharing"
                 },
                 "tags": ["自動化", "効率化", "採用"],
                 "addedDate": "2024-11-15"
@@ -40,7 +40,7 @@
                 "id": "hr-003",
                 "name": "勤怠・給与計算支援ツール",
                 "shortDesc": "勤怠データから給与計算まで自動化",
-                "status": "planning",
+                "status": "development",
                 "tags": ["給与計算", "勤怠管理"],
                 "addedDate": "2024-12-10"
               }
@@ -71,6 +71,7 @@
                 "status": "production",
                 "impact": "資料作成時間80%削減",
                 "links": {
+                  "demo": "https://youtu.be/demo_sales",
                   "genspark": [
                     {
                       "name": "AIプログラム提案_ヒアリング項目抽出bot",
@@ -94,11 +95,10 @@
                 "name": "商談議事録自動生成AI",
                 "shortDesc": "商談内容を自動で文字起こし・要約",
                 "fullDesc": "ailead等のツールを活用し、商談の音声を自動で文字起こし、重要ポイントを抽出して構造化された議事録を生成。次回アクションアイテムも自動抽出します。",
-                "status": "production",
+                "status": "development",
                 "impact": "議事録作成時間90%削減",
                 "links": {
-                  "demo": "#",
-                  "document": "#"
+                  "demo": "https://youtu.be/demo_sales_minutes"
                 },
                 "tags": ["文字起こし", "要約", "ailead"],
                 "addedDate": "2024-10-15"
@@ -138,7 +138,8 @@
                 "status": "production",
                 "impact": "ドキュメント作成時間75%削減",
                 "links": {
-                  "demo": "https://script.google.com/a/macros/team.addness.co.jp/s/AKfycbzI2CslFKl-O2u4Q3Drj7HpaHrxFcURNKuNvIELwKfbEW5BgwSlBK--58vWUB5YdT1BRg/exec"
+                  "demo": "https://youtu.be/demo_mfg",
+                  "tool": "https://script.google.com/a/macros/team.addness.co.jp/s/AKfycbzI2CslFKl-O2u4Q3Drj7HpaHrxFcURNKuNvIELwKfbEW5BgwSlBK--58vWUB5YdT1BRg/exec"
                 },
                 "tags": ["ドキュメント生成", "製造", "多言語対応"],
                 "addedDate": "2024-09-01"
@@ -157,7 +158,7 @@
                 "id": "mfg-003",
                 "name": "品質不良原因分析・対策提案AI",
                 "shortDesc": "不良品の原因を自動分析し改善策を提案",
-                "status": "planning",
+                "status": "development",
                 "tags": ["品質管理", "分析", "改善提案"],
                 "addedDate": "2024-12-15"
               }
@@ -192,7 +193,8 @@
                 "status": "production",
                 "impact": "返信作成時間70%削減",
                 "links": {
-                  "demo": "https://app.slack.com/client/T09LLPWU8F7/C09MELEK02Y",
+                  "demo": "https://youtu.be/demo_cs",
+                  "tool": "https://app.slack.com/client/T09LLPWU8F7/C09MELEK02Y",
                   "artifact": "https://claude.ai/public/artifacts/0d2537c8-6269-4e22-a3ba-adf0622aeb26"
                 },
                 "tags": ["メール自動化", "カスタマーサポート"],
@@ -212,7 +214,7 @@
                 "id": "cs-003",
                 "name": "議事録自動作成＆要約システム",
                 "shortDesc": "顧客MTGの議事録を自動生成",
-                "status": "production",
+                "status": "development",
                 "impact": "議事録作成時間90%削減",
                 "tags": ["議事録", "要約", "顧客対応"],
                 "addedDate": "2024-09-15"
