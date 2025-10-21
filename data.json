@@ -18,6 +18,20 @@
                 "fullDesc": "AIを活用して応募者の書類選考、適性判定、面接日程の自動調整まで一貫して自動化。採用担当者の業務負荷を大幅に軽減し、より戦略的な採用活動に注力できます。",
                 "status": "production",
                 "impact": "採用工数70%削減",
+                "testData": {
+                  "title": "テストデータ",
+                  "items": []
+                },
+                "script": {
+                  "title": "営業説明台本",
+                  "opening": "",
+                  "points": [],
+                  "closing": ""
+                },
+                "qa": {
+                  "title": "想定Q&A",
+                  "items": []
+                },
                 "links": {
                   "demo": "https://youtu.be/demo1",
                   "tool": "https://docs.google.com/spreadsheets/d/1HYHC-8Ue__67IEYwtm7nHUbWCEG4q5KAGkDVZxp3LzY/edit?usp=sharing"
@@ -70,6 +84,20 @@
                 "fullDesc": "ヒアリング内容を入力するだけで、顧客の業界・規模・課題に最適化された提案資料を自動生成。ROI試算から導入スケジュールまで網羅的にカバーし、営業の提案準備時間を大幅に削減します。",
                 "status": "production",
                 "impact": "資料作成時間80%削減",
+                "testData": {
+                  "title": "テストデータ",
+                  "items": []
+                },
+                "script": {
+                  "title": "営業説明台本",
+                  "opening": "",
+                  "points": [],
+                  "closing": ""
+                },
+                "qa": {
+                  "title": "想定Q&A",
+                  "items": []
+                },
                 "links": {
                   "demo": "https://youtu.be/demo_sales",
                   "genspark": [
@@ -137,6 +165,20 @@
                 "fullDesc": "製品の設計情報、CADデータ、技術要件から、技術仕様書、操作マニュアル、保守ドキュメントを自動生成。多言語対応も可能で、グローバル展開を支援します。",
                 "status": "production",
                 "impact": "ドキュメント作成時間75%削減",
+                "testData": {
+                  "title": "テストデータ",
+                  "items": []
+                },
+                "script": {
+                  "title": "営業説明台本",
+                  "opening": "",
+                  "points": [],
+                  "closing": ""
+                },
+                "qa": {
+                  "title": "想定Q&A",
+                  "items": []
+                },
                 "links": {
                   "demo": "https://youtu.be/demo_mfg",
                   "tool": "https://script.google.com/a/macros/team.addness.co.jp/s/AKfycbzI2CslFKl-O2u4Q3Drj7HpaHrxFcURNKuNvIELwKfbEW5BgwSlBK--58vWUB5YdT1BRg/exec"
@@ -192,6 +234,20 @@
                 "fullDesc": "顧客からの問い合わせメールを分析し、過去の対応履歴と製品情報を基に最適な返信文を自動生成。担当者は確認・微調整のみで送信可能です。",
                 "status": "production",
                 "impact": "返信作成時間70%削減",
+                "testData": {
+                  "title": "テストデータ",
+                  "items": []
+                },
+                "script": {
+                  "title": "営業説明台本",
+                  "opening": "",
+                  "points": [],
+                  "closing": ""
+                },
+                "qa": {
+                  "title": "想定Q&A",
+                  "items": []
+                },
                 "links": {
                   "demo": "https://youtu.be/demo_cs",
                   "tool": "https://app.slack.com/client/T09LLPWU8F7/C09MELEK02Y",
