@@ -410,15 +410,65 @@
             }
         }
 
-        @keyframes slideUp {
+        .expand-button {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, #E0E7FF, #C7D2FE);
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .expand-button:hover {
+            background: linear-gradient(135deg, #C7D2FE, #A5B4FC);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .expand-button.active {
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            color: white;
+        }
+
+        .expand-content {
+            display: none;
+            animation: slideDown 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .expand-content.show {
+            display: block;
+        }
+
+        .button-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .expand-button.active .button-icon {
+            transform: rotate(90deg);
+        }
+
+        @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(-10px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .button-group {
+            margin: 1.5rem 0;
         }
 
         .loading {
@@ -487,6 +537,16 @@
                                         fullDesc: "AIを活用して応募者の書類選考、適性判定、面接日程の自動調整まで一貫して自動化。採用業務の効率を大幅に向上させます。",
                                         status: "production",
                                         impact: "採用工数70%削減",
+                                        testData: {
+                                            title: "テストデータ",
+                                            items: []
+                                        },
+                                        script: {
+                                            title: "営業説明台本",
+                                            opening: "",
+                                            points: [],
+                                            closing: ""
+                                        },
                                         links: {
                                             demo: "https://youtu.be/demo1",
                                             tool: "https://docs.google.com/spreadsheets/d/1HYHC-8Ue__67IEYwtm7nHUbWCEG4q5KAGkDVZxp3LzY/edit?usp=sharing"
@@ -538,6 +598,16 @@
                                         fullDesc: "ヒアリング内容からROI試算、資料作成まで一貫して自動化。営業の提案準備時間を大幅に削減します。",
                                         status: "production",
                                         impact: "資料作成時間80%削減",
+                                        testData: {
+                                            title: "テストデータ",
+                                            items: []
+                                        },
+                                        script: {
+                                            title: "営業説明台本",
+                                            opening: "",
+                                            points: [],
+                                            closing: ""
+                                        },
                                         links: {
                                             demo: "https://youtu.be/demo_sales",
                                             genspark: [
@@ -810,6 +880,91 @@
                 `;
             }
             
+            // ボタングループ
+            bodyHTML += '<div class="button-group">';
+            
+            // テストデータボタンと内容
+            if (tool.testData) {
+                bodyHTML += `
+                    <button class="expand-button" onclick="toggleExpand('testData-${tool.id}', this)">
+                        <span>🧪 ${tool.testData.title || 'テストデータ'}</span>
+                        <span class="button-icon">▶</span>
+                    </button>
+                    <div id="testData-${tool.id}" class="expand-content">
+                        <div style="background: #F0F9FF; padding: 1rem; border-radius: 8px; font-size: 0.9rem;">
+                `;
+                
+                if (tool.testData.items && tool.testData.items.length > 0) {
+                    bodyHTML += '<ul style="margin: 0; padding-left: 1.5rem;">';
+                    tool.testData.items.forEach(item => {
+                        bodyHTML += `<li style="margin-bottom: 0.5rem; color: #1E40AF;">${item}</li>`;
+                    });
+                    bodyHTML += '</ul>';
+                }
+                
+                bodyHTML += '</div></div>';
+            }
+            
+            // 説明台本ボタンと内容
+            if (tool.script) {
+                bodyHTML += `
+                    <button class="expand-button" onclick="toggleExpand('script-${tool.id}', this)">
+                        <span>📝 ${tool.script.title || '営業説明台本'}</span>
+                        <span class="button-icon">▶</span>
+                    </button>
+                    <div id="script-${tool.id}" class="expand-content">
+                        <div style="background: #FFF4ED; padding: 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.8;">
+                `;
+                
+                if (tool.script.opening) {
+                    bodyHTML += `<p style="margin-bottom: 1rem; font-weight: 600; color: #EA580C;">【オープニング】<br>${tool.script.opening}</p>`;
+                }
+                
+                if (tool.script.points && tool.script.points.length > 0) {
+                    bodyHTML += '<p style="margin-bottom: 0.5rem; font-weight: 600; color: #EA580C;">【ポイント】</p>';
+                    bodyHTML += '<ul style="margin: 0 0 1rem 0; padding-left: 1.5rem;">';
+                    tool.script.points.forEach(point => {
+                        bodyHTML += `<li style="margin-bottom: 0.5rem;">${point}</li>`;
+                    });
+                    bodyHTML += '</ul>';
+                }
+                
+                if (tool.script.closing) {
+                    bodyHTML += `<p style="margin: 0; font-weight: 600; color: #EA580C;">【クロージング】<br>${tool.script.closing}</p>`;
+                }
+                
+                bodyHTML += '</div></div>';
+            }
+            
+            // 想定Q&Aボタンと内容
+            if (tool.qa) {
+                bodyHTML += `
+                    <button class="expand-button" onclick="toggleExpand('qa-${tool.id}', this)">
+                        <span>❓ ${tool.qa.title || '想定Q&A'}</span>
+                        <span class="button-icon">▶</span>
+                    </button>
+                    <div id="qa-${tool.id}" class="expand-content">
+                        <div style="background: #F5F3FF; padding: 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.8;">
+                `;
+                
+                if (tool.qa.items && tool.qa.items.length > 0) {
+                    tool.qa.items.forEach(item => {
+                        bodyHTML += `
+                            <div style="margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #E5E7EB;">
+                                <p style="margin-bottom: 0.5rem; font-weight: 600; color: #5B21B6;">Q: ${item.question}</p>
+                                <p style="margin: 0; color: #374151;">A: ${item.answer}</p>
+                            </div>
+                        `;
+                    });
+                } else {
+                    bodyHTML += '<p style="margin: 0; color: #6B7280;">Q&Aは準備中です。</p>';
+                }
+                
+                bodyHTML += '</div></div>';
+            }
+            
+            bodyHTML += '</div>'; // button-group終了
+            
             // リンク
             if (tool.links) {
                 bodyHTML += '<div class="modal-section">';
@@ -913,6 +1068,22 @@
         function closeModal() {
             const modal = document.getElementById('toolModal');
             modal.classList.remove('show');
+            // 展開された内容をリセット
+            document.querySelectorAll('.expand-content').forEach(content => {
+                content.classList.remove('show');
+            });
+            document.querySelectorAll('.expand-button').forEach(button => {
+                button.classList.remove('active');
+            });
+        }
+
+        // 展開/折りたたみのトグル
+        function toggleExpand(contentId, button) {
+            const content = document.getElementById(contentId);
+            if (content) {
+                content.classList.toggle('show');
+                button.classList.toggle('active');
+            }
         }
 
         // モーダル外クリックで閉じる
